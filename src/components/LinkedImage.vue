@@ -1,5 +1,4 @@
 <template>
-
     <a
       :href='linkUri'
       class="relative flex-shrink-0 object-contain w-32 h-32 mx-auto overflow-hidden rounded-full md:w-64 md:h-64 md:rounded">
@@ -11,10 +10,9 @@
       <img
         class="absolute top-0 left-0 object-contain w-32 h-32 mx-auto rounded-full md:w-64 md:h-64 md:rounded-none"
         :src="imgUri(true)"
-        alt=""
+        :alt="altText"
         loading="lazy">
     </a>
-
 </template>
 
 <script lang="ts">
@@ -54,5 +52,4 @@ export default defineComponent({
     };
   }
 });
-
 </script>

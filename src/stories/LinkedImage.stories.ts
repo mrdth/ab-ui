@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue3';
 import LinkedImage from '../components/LinkedImage.vue';
 
 export default {
@@ -5,7 +6,7 @@ export default {
   title: 'Components/LinkedImage'
 };
 
-const Template = (args) => ({
+const Template:Story = (args) => ({
   components: { LinkedImage },
   setup () {
     return { args };
@@ -18,14 +19,14 @@ const Template = (args) => ({
 });
 
 // 👇 Each story then reuses that template
-export const WithImage = Template.bind({});
-WithImage.args = {
+export const WithImageURI = Template.bind({});
+WithImageURI.args = {
   srcUri: 'https://images.gr-assets.com/authors/1282859073p7/3472.jpg',
   altText: 'Margaret Atwood'
 };
 
 // 👇 Each story then reuses that template
-export const NoImage = Template.bind({});
-NoImage.args = {
+export const NoImageURI = Template.bind({});
+NoImageURI.args = {
   altText: 'Margaret Atwood'
 };
