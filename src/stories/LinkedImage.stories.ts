@@ -3,7 +3,10 @@ import LinkedImage from '../components/LinkedImage.vue';
 
 export default {
   component: LinkedImage,
-  title: 'Components/LinkedImage'
+  title: 'Components/LinkedImage',
+  decorators: [() => ({
+    template: '<div class="flex flex-col p-8 md:flex-row md:p-0 md:px-2 md:mb-4"><story/></div>'
+  })]
 };
 
 const Template:Story = (args) => ({
@@ -11,11 +14,7 @@ const Template:Story = (args) => ({
   setup () {
     return { args };
   },
-  template: `
-  <div class="flex flex-col p-8 md:flex-row md:p-0 md:px-2 md:mb-4">
-    <LinkedImage v-bind="args" />
-  </div>
-  `
+  template: '<LinkedImage v-bind="args" />'
 });
 
 // 👇 Each story then reuses that template
