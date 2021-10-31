@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils';
 
-import LinkedImage from '@/components/LinkedImage.vue';
+import { LinkedImage } from '@/components/molecules/';
 
-import { WithImageURI, NoImageURI } from '@/stories/LinkedImage.stories';
+import { WithImageURI, NoImageURI } from '@/stories/molecules/LinkedImage.stories';
 
 describe('LinkedImage with srcUri', () => {
   const wrapper = mount(LinkedImage, {

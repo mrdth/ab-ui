@@ -2,24 +2,18 @@
     <a
       :href='linkUri'
       class="relative flex-shrink-0 object-contain w-32 h-32 mx-auto overflow-hidden rounded-full md:w-64 md:h-64 md:rounded">
-      <img
-        class="object-fill w-32 h-32 mx-auto rounded-full md:w-64 md:h-64 md:rounded-none filter blur-md"
-        :src="imgUri()"
-        :alt="altText"
-        loading="lazy">
-      <img
-        class="absolute top-0 left-0 object-contain w-32 h-32 mx-auto rounded-full md:w-64 md:h-64 md:rounded-none"
-        :src="imgUri(true)"
-        :alt="altText"
-        loading="lazy">
+      <BlurredImage :src="imgUri()" :alt="altText"/>
+      <Image :src="imgUri(true)" :alt="altText"/>
     </a>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Image, BlurredImage } from '@/components/atoms/';
 
 export default defineComponent({
   name: 'LinkedImage',
+  components: { Image, BlurredImage },
   props: {
     /** Source for the image being displayed. */
     srcUri: {

@@ -1,5 +1,5 @@
 import { Story } from '@storybook/vue3';
-import LinkedImage from '../components/LinkedImage.vue';
+import { LinkedImage } from '@/components/molecules/';
 
 export default {
   component: LinkedImage,
