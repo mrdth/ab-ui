@@ -1,7 +1,5 @@
 import { mount } from '@vue/test-utils';
-
 import { BlurredImage } from '@/components/atoms';
-
 import { WithImageURI, NoImageURI } from '@/stories/atoms/BlurredImage.stories';
 
 describe('Image with srcUri', () => {

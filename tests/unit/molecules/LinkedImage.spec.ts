@@ -1,7 +1,5 @@
 import { mount } from '@vue/test-utils';
-
 import { LinkedImage } from '@/components/molecules/';
-
 import { WithImageURI, NoImageURI } from '@/stories/molecules/LinkedImage.stories';
 
 describe('LinkedImage with srcUri', () => {

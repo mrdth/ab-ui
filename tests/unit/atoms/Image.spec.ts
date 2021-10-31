@@ -1,7 +1,5 @@
 import { mount } from '@vue/test-utils';
-
 import { Image } from '@/components/atoms';
-
 import { WithImageURI, NoImageURI } from '@/stories/atoms/Image.stories';
 
 describe('Image with srcUri', () => {
