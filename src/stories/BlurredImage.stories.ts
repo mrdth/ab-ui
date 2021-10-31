@@ -1,20 +1,20 @@
 import { Story } from '@storybook/vue3';
-import LinkedImage from '../components/LinkedImage.vue';
+import { BlurredImage } from '@/components/atoms/';
 
 export default {
-  component: LinkedImage,
-  title: 'Molecules/Images/LinkedImage',
+  component: BlurredImage,
+  title: 'Atoms/Images/BlurredImage',
   decorators: [() => ({
     template: '<div class="flex flex-col p-8 md:flex-row md:p-0 md:px-2 md:mb-4"><story/></div>'
   })]
 };
 
 const Template:Story = (args) => ({
-  components: { LinkedImage },
+  components: { BlurredImage },
   setup () {
     return { args };
   },
-  template: '<LinkedImage v-bind="args" />'
+  template: '<BlurredImage v-bind="args" />'
 });
 
 // 👇 Each story then reuses that template
