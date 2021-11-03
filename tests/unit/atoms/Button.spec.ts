@@ -19,6 +19,16 @@ describe('Button with linkUri', () => {
   it('renders the a link on the button', () => {
     expect(wrapper.find('a').attributes('href')).toBe('http://margaretatwood.ca/');
   });
+
+  test('background colour can be specified', () => {
+    WithLinkURI.args = WithLinkURI.args || {};
+    WithLinkURI.args.bgColour = 'bg-red-900';
+    const wrapper = mount(Button, {
+      propsData: WithLinkURI.args
+    });
+
+    expect(wrapper.find('a').attributes('class')).toContain('bg-red-900');
+  });
 });
 
 describe('Button without linkUri', () => {
@@ -33,5 +43,15 @@ describe('Button without linkUri', () => {
 
   it('renders the correct text on the button', () => {
     expect(wrapper.find('button').text()).toEqual('Default Button');
+  });
+
+  test('background colour can be specified', () => {
+    WithoutLinkURI.args = WithoutLinkURI.args || {};
+    WithoutLinkURI.args.bgColour = 'bg-red-900';
+    const wrapper = mount(Button, {
+      propsData: WithoutLinkURI.args
+    });
+
+    expect(wrapper.find('button').attributes('class')).toContain('bg-red-900');
   });
 });

@@ -1,12 +1,12 @@
 <template>
   <a
     v-if="linkUri"
-    class="px-4 py-2 ml-3 text-white bg-blue-900 rounded"
+    :class="classList()"
     :href="linkUri">{{ text }}</a>
 
   <button
     v-else
-    class="px-4 py-2 ml-3 text-white bg-blue-900 rounded">{{ text }}</button>
+    :class="classList()">{{ text }}</button>
 </template>
 
 <script lang="ts">
@@ -24,7 +24,23 @@ export default defineComponent({
     linkUri: {
       type: String,
       requied: false
+    },
+    bgColour: {
+      type: String,
+      required: false,
+      default: 'bg-blue-900'
     }
+  },
+  setup (props) {
+    const classList = () => {
+      const defaults = 'px-4 py-2 ml-3 text-white rounded'.split(' ');
+      return [...defaults, props.bgColour].join(' ');
+    };
+
+    return {
+      props,
+      classList
+    };
   }
 });
 </script>
